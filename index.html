@@ -1,163 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic Logic | AI Agents for Real Estate</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
-
-body{
-    background:#0A192F;
-    color:white;
-}
-
-section{
-    padding:100px 10%;
-}
-
-h1,h2{
-    font-weight:700;
-}
-
-p{
-    color:#cbd5e1;
-    margin-top:15px;
-    line-height:1.6;
-}
-
-/* HERO */
-.hero{
-    text-align:center;
-    padding-top:120px;
-}
-
-.logo{
-    position:absolute;
-    top:25px;
-    left:10%;
-    font-size:22px;
-    font-weight:600;
-}
-
-.logo span{
-    color:#007BFF;
-}
-
-.hero h1{
-    font-size:50px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    max-width:700px;
-    margin:0 auto;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:15px 35px;
-    background:#007BFF;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#00c3ff;
-}
-
-/* PROBLEM */
-.problem{
-    background:#081426;
-    text-align:center;
-}
-
-.problem h2{
-    font-size:36px;
-}
-
-.problem-box{
-    margin-top:40px;
-    font-size:18px;
-    max-width:750px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-/* SERVICES */
-.services{
-    text-align:center;
-}
-
-.service-grid{
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    margin-top:50px;
-    flex-wrap:wrap;
-}
-
-.card{
-    background:#081426;
-    padding:30px;
-    border-radius:10px;
-    width:280px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    margin-bottom:10px;
-    color:#007BFF;
-}
-
-/* SOCIAL PROOF */
-.social-proof{
-    background:#081426;
-    text-align:center;
-}
-
-.case-study{
-    margin-top:30px;
-    font-size:20px;
-    font-weight:600;
-    color:#00c3ff;
-}
-
-/* FOOTER CTA */
-.cta{
-    text-align:center;
-}
-
-.cta h2{
-    font-size:40px;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#081426;
-    color:#94a3b8;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Logic | AI Agents for Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+        body{ background:#0A192F; color:white; }
+        section{ padding:100px 10%; }
+        h1,h2{ font-weight:700; }
+        p{ color:#cbd5e1; margin-top:15px; line-height:1.6; }
+        .hero{ text-align:center; padding-top:120px; }
+        .logo{ position:absolute; top:25px; left:10%; font-size:22px; font-weight:600; }
+        .logo span{ color:#007BFF; }
+        .hero h1{ font-size:50px; margin-bottom:20px; }
+        .hero p{ font-size:20px; max-width:700px; margin:0 auto; }
+        .btn{ display:inline-block; margin-top:35px; padding:15px 35px; background:#007BFF; color:white; text-decoration:none; border-radius:6px; font-weight:600; transition:0.3s; }
+        .btn:hover{ background:#00c3ff; }
+        .btn-alt { background: transparent; border: 1px solid #007BFF; margin-left: 10px; }
+        .problem{ background:#081426; text-align:center; }
+        .problem h2{ font-size:36px; }
+        .problem-box{ margin-top:40px; font-size:18px; max-width:750px; margin-left:auto; margin-right:auto; }
+        .services{ text-align:center; }
+        .service-grid{ display:flex; gap:30px; justify-content:center; margin-top:50px; flex-wrap:wrap; }
+        .card{ background:#081426; padding:30px; border-radius:10px; width:280px; transition:0.3s; border: 1px solid #1e293b; }
+        .card:hover{ transform:translateY(-10px); border-color: #007BFF; }
+        .card h3{ margin-bottom:10px; color:#007BFF; }
+        .social-proof{ background:#081426; text-align:center; }
+        .case-study{ margin-top:30px; font-size:20px; font-weight:600; color:#00c3ff; }
+        .cta{ text-align:center; }
+        .cta h2{ font-size:40px; }
+        footer{ text-align:center; padding:30px; background:#081426; color:#94a3b8; }
+    </style>
 </head>
-
 <body>
 
 <div class="logo">Agentic<span>Logic</span></div>
@@ -166,6 +42,7 @@ footer{
     <h1>Stop Losing Leads to Your Competitors.</h1>
     <p>We deploy Autonomous AI Agents that respond to your Real Estate leads in 5 seconds, 24/7. Turn "browsers" into "booked tours" while you sleep.</p>
     <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn">Start My Free Trial</a>
+    <a href="#" class="btn btn-alt">Get Free AI Audit</a>
 </section>
 
 <section class="problem">
@@ -189,26 +66,6 @@ footer{
         <div class="card">
             <h3>The Closer</h3>
             <p>Automatically books the showing directly onto your Google or Outlook calendar.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 </section>
@@ -223,7 +80,7 @@ footer{
 <section class="cta">
     <h2>Ready to Automate?</h2>
     <p>Join our Partner Program today. Get a 14-Day Free Trial of the Agentic Command Center + Free Setup from our team.</p>
-    <a href="#" class="btn">Start My Free Trial</a>
+    <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn">Start My Free Trial</a>
 </section>
 
 <footer>
