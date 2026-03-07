@@ -23,7 +23,8 @@
 
         /* HEADER & NAVIGATION */
         header { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; position: absolute; top: 0; width: 100%; z-index: 10; }
-        .logo { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 600; text-decoration: none; color: white; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 600; text-decoration: none; color: white; transition: 0.3s; }
+        .logo:hover { opacity: 0.8; }
         .logo span { color: var(--primary); }
         .contact-link { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .contact-link:hover { color: var(--primary-glow); }
@@ -66,11 +67,13 @@
 
         /* FOOTER */
         footer { text-align: center; padding: 40px 10%; background: #050d1a; color: #64748b; font-size: 15px; border-top: 1px solid #1e293b; }
+        .footer-link { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
+        .footer-link:hover { color: white; }
         .footer-email { color: var(--primary-glow); text-decoration: none; font-weight: 600; margin-left: 5px; }
         .footer-email:hover { text-decoration: underline; }
 
         @media (max-width: 768px) {
-            .contact-link { display: none; /* Hide email on mobile header to save space */ }
+            .contact-link { display: none; }
             section { padding: 80px 5%; }
         }
     </style>
@@ -78,7 +81,7 @@
 <body>
 
 <header>
-    <a href="#" class="logo">
+    <a href="https://www.agenticlogic-ai.com" class="logo">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L2 22H9.5L12 16L14.5 22H22L12 2Z" fill="#007BFF"/>
             <circle cx="12" cy="10" r="3" fill="white"/>
@@ -138,7 +141,7 @@
 </section>
 
 <footer>
-    <p>© 2026 Agentic Logic. All Rights Reserved.</p>
+    <p>© 2026 Agentic Logic | <a href="https://www.agenticlogic-ai.com" class="footer-link">www.agenticlogic-ai.com</a></p>
     <p style="margin-top: 10px;">Have questions? Email us at <a href="mailto:hello@agenticlogic-ai.com" class="footer-email">hello@agenticlogic-ai.com</a></p>
 </footer>
 
