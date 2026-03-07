@@ -1,99 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Logic | AI Agents for Real Estate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        *{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
-        body{ background:#0A192F; color:white; }
-        section{ padding:100px 10%; }
-        h1,h2{ font-weight:700; }
-        p{ color:#cbd5e1; margin-top:15px; line-height:1.6; }
-        .hero{ text-align:center; padding-top:120px; }
-        
-        /* UPDATED LOGO CSS for SVG integration and text alignment */
-        .logo{ position:absolute; top:25px; left:10%; font-size:22px; font-weight:600; text-decoration: none; /* remove link underline */ color: white; /* set text color to white */ }
-        .logo span{ color:#007BFF; }
-        
-        .hero h1{ font-size:50px; margin-bottom:20px; }
-        .hero p{ font-size:20px; max-width:700px; margin:0 auto; }
-        .btn{ display:inline-block; margin-top:35px; padding:15px 35px; background:#007BFF; color:white; text-decoration:none; border-radius:6px; font-weight:600; transition:0.3s; }
-        .btn:hover{ background:#00c3ff; }
-        .btn-alt { background: transparent; border: 1px solid #007BFF; margin-left: 10px; }
-        .problem{ background:#081426; text-align:center; }
-        .problem h2{ font-size:36px; }
-        .problem-box{ margin-top:40px; font-size:18px; max-width:750px; margin-left:auto; margin-right:auto; }
-        .services{ text-align:center; }
-        .service-grid{ display:flex; gap:30px; justify-content:center; margin-top:50px; flex-wrap:wrap; }
-        .card{ background:#081426; padding:30px; border-radius:10px; width:280px; transition:0.3s; border: 1px solid #1e293b; }
-        .card:hover{ transform:translateY(-10px); border-color: #007BFF; }
-        .card h3{ margin-bottom:10px; color:#007BFF; }
-        .social-proof{ background:#081426; text-align:center; }
-        .case-study{ margin-top:30px; font-size:20px; font-weight:600; color:#00c3ff; }
-        .cta{ text-align:center; }
-        .cta h2{ font-size:40px; }
-        footer{ text-align:center; padding:30px; background:#081426; color:#94a3b8; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Logic | AI Agents for Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0A192F;
+            --card-bg: #112240;
+            --primary: #007BFF;
+            --primary-glow: #00c3ff;
+            --text-main: #ffffff;
+            --text-muted: #cbd5e1;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        body { background: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        section { padding: 100px 10%; }
+        h1, h2 { font-weight: 700; }
+        p { color: var(--text-muted); margin-top: 15px; }
+
+        /* HEADER & NAVIGATION */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; position: absolute; top: 0; width: 100%; z-index: 10; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 600; text-decoration: none; color: white; }
+        .logo span { color: var(--primary); }
+        .contact-link { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .contact-link:hover { color: var(--primary-glow); }
+
+        /* BUTTONS */
+        .btn-group { display: flex; gap: 15px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 16px 35px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 16px; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); }
+        .btn-primary:hover { background: var(--primary-glow); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 195, 255, 0.4); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: white; }
+        .btn-outline:hover { background: rgba(0, 123, 255, 0.1); transform: translateY(-3px); }
+
+        /* HERO SECTION */
+        .hero { text-align: center; padding-top: 160px; padding-bottom: 80px; background: radial-gradient(circle at top center, #112240 0%, #0A192F 100%); border-bottom: 1px solid #1e293b; }
+        .hero h1 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; max-width: 750px; margin: 0 auto; }
+
+        /* PROBLEM SECTION */
+        .problem { background: var(--card-bg); text-align: center; }
+        .problem h2 { font-size: 36px; color: var(--primary-glow); }
+        .problem-box { margin-top: 20px; font-size: 18px; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        /* SERVICES GRID */
+        .services { text-align: center; }
+        .services h2 { font-size: 36px; margin-bottom: 50px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--card-bg); padding: 40px 30px; border-radius: 12px; border: 1px solid #1e293b; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--primary); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .card:hover::before { transform: scaleX(1); }
+        .card h3 { margin-bottom: 15px; color: var(--primary-glow); font-size: 22px; }
+
+        /* SOCIAL PROOF & CTA */
+        .social-proof { background: var(--card-bg); text-align: center; border-bottom: 1px solid #1e293b; border-top: 1px solid #1e293b; }
+        .case-study { margin-top: 20px; font-size: 22px; font-weight: 600; color: white; }
+        .case-study span { color: var(--primary-glow); }
+        
+        .cta { text-align: center; padding: 100px 10%; background: radial-gradient(circle at bottom center, #112240 0%, #0A192F 100%); }
+        .cta h2 { font-size: 42px; margin-bottom: 20px; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 40px 10%; background: #050d1a; color: #64748b; font-size: 15px; border-top: 1px solid #1e293b; }
+        .footer-email { color: var(--primary-glow); text-decoration: none; font-weight: 600; margin-left: 5px; }
+        .footer-email:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .contact-link { display: none; /* Hide email on mobile header to save space */ }
+            section { padding: 80px 5%; }
+        }
+    </style>
 </head>
 <body>
 
-<a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L2 22H9.5L12 16L14.5 22H22L12 2Z" fill="#007BFF"/>
-        <circle cx="12" cy="10" r="3" fill="white"/>
-    </svg>
-    Agentic<span>Logic</span>
-</a>
+<header>
+    <a href="#" class="logo">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 22H9.5L12 16L14.5 22H22L12 2Z" fill="#007BFF"/>
+            <circle cx="12" cy="10" r="3" fill="white"/>
+        </svg>
+        Agentic<span>Logic</span>
+    </a>
+    <a href="mailto:hello@agenticlogic-ai.com" class="contact-link">
+        ✉️ hello@agenticlogic-ai.com
+    </a>
+</header>
 
 <section class="hero">
-    <h1>Stop Losing Leads to Your Competitors.</h1>
-    <p>We deploy Autonomous AI Agents that respond to your Real Estate leads in 5 seconds, 24/7. Turn "browsers" into "booked tours" while you sleep.</p>
-    <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn">Start My Free Trial</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPm6dRvarTuJpwGx6-ETJ8WpS0kQ62Zx7UV7ftr-x3WCtvw/viewform?usp=publish-editor" class="btn btn-alt">Get Free AI Audit</a>
+    <h1>Stop Losing Leads to Your Competitors.</h1>
+    <p>We deploy Autonomous AI Agents that respond to your Real Estate leads in 5 seconds, 24/7. Turn "browsers" into "booked tours" while you sleep.</p>
+    <div class="btn-group">
+        <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn btn-primary">Start My Free Trial</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPm6dRvarTuJpwGx6-ETJ8WpS0kQ62Zx7UV7ftr-x3WCtvw/viewform?usp=publish-editor" class="btn btn-outline" target="_blank">Get Free AI Audit</a>
+    </div>
 </section>
 
 <section class="problem">
-    <h2>The 5-Minute Rule.</h2>
-    <div class="problem-box">
-        <p>Did you know? If you don't respond to a lead in under 5 minutes, your chance of closing drops by 80%. In 2026, home buyers don't wait. If you're at a showing or sleeping, you're losing money.</p>
-    </div>
+    <h2>The 5-Minute Rule.</h2>
+    <div class="problem-box">
+        <p>Did you know? If you don't respond to a lead in under 5 minutes, your chance of closing drops by <strong>80%</strong>. In 2026, home buyers don't wait. If you're at a showing or sleeping, you're leaking money. We seal the leak.</p>
+    </div>
 </section>
 
 <section class="services">
-    <h2>Our AI Employees</h2>
-    <div class="service-grid">
-        <div class="card">
-            <h3>24/7 Responder</h3>
-            <p>Instantly texts every lead from Facebook, Google, and Zillow.</p>
-        </div>
-        <div class="card">
-            <h3>The Qualifier</h3>
-            <p>AI asks the budget, location, and move-in date so you don't have to.</p>
-        </div>
-        <div class="card">
-            <h3>The Closer</h3>
-            <p>Automatically books the showing directly onto your Google or Outlook calendar.</p>
-        </div>
-    </div>
+    <h2>Meet Your New Digital Employees</h2>
+    <div class="service-grid">
+        <div class="card">
+            <h3>24/7 Responder</h3>
+            <p>Instantly texts every incoming lead from Facebook, Google, and Zillow. You never miss a conversation.</p>
+        </div>
+        <div class="card">
+            <h3>The Qualifier</h3>
+            <p>Our AI intelligently asks for the buyer's budget, ideal location, and move-in date before you ever pick up the phone.</p>
+        </div>
+        <div class="card">
+            <h3>The Closer</h3>
+            <p>Automatically syncs with your Google or Outlook calendar to book property tours without the back-and-forth.</p>
+        </div>
+    </div>
 </section>
 
 <section class="social-proof">
-    <h2>Trusted by Modern Real Estate Teams.</h2>
-    <div class="case-study">
-        Oak & Key Realty increased their appointment bookings by 350% in 30 days using our Agentic Workflow.
-    </div>
+    <h2>Trusted by Modern Real Estate Teams.</h2>
+    <div class="case-study">
+        Oak & Key Realty increased their appointment bookings by <span>350% in 30 days</span> using our Agentic Workflow.
+    </div>
 </section>
 
 <section class="cta">
-    <h2>Ready to Automate?</h2>
-    <p>Join our Partner Program today. Get a 14-Day Free Trial of the Agentic Command Center + Free Setup from our team.</p>
-    <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn">Start My Free Trial</a>
+    <h2>Ready to Automate Your Growth?</h2>
+    <p style="margin-bottom: 30px;">Join our Partner Program today. Get a 14-Day Free Trial of the Agentic Command Center + Free Setup from our team.</p>
+    <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn btn-primary">Start My Free Trial Now</a>
 </section>
 
 <footer>
-© 2026 Agentic Logic. All Rights Reserved.
+    <p>© 2026 Agentic Logic. All Rights Reserved.</p>
+    <p style="margin-top: 10px;">Have questions? Email us at <a href="mailto:hello@agenticlogic-ai.com" class="footer-email">hello@agenticlogic-ai.com</a></p>
 </footer>
 
 </body>
