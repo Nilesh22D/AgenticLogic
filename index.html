@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18000143861"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18000143861"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18000143861');
+    </script>
 
-  gtag('config', 'AW-18000143861');
-</script>
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18000143861/ONaoCMXzs4QcEPXLkYdD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentic Logic | AI Agents for Real Estate</title>
@@ -29,7 +44,6 @@
         h1, h2 { font-weight: 700; }
         p { color: var(--text-muted); margin-top: 15px; }
 
-        /* HEADER & NAVIGATION */
         header { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; position: absolute; top: 0; width: 100%; z-index: 10; }
         .logo { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 600; text-decoration: none; color: white; transition: 0.3s; }
         .logo:hover { opacity: 0.8; }
@@ -37,25 +51,21 @@
         .contact-link { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .contact-link:hover { color: var(--primary-glow); }
 
-        /* BUTTONS */
         .btn-group { display: flex; gap: 15px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-        .btn { display: inline-block; padding: 16px 35px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 16px; }
+        .btn { display: inline-block; padding: 16px 35px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 16px; border: none; cursor: pointer; }
         .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); }
         .btn-primary:hover { background: var(--primary-glow); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 195, 255, 0.4); }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: white; }
         .btn-outline:hover { background: rgba(0, 123, 255, 0.1); transform: translateY(-3px); }
 
-        /* HERO SECTION */
         .hero { text-align: center; padding-top: 160px; padding-bottom: 80px; background: radial-gradient(circle at top center, #112240 0%, #0A192F 100%); border-bottom: 1px solid #1e293b; }
         .hero h1 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 20px; line-height: 1.2; }
         .hero p { font-size: 20px; max-width: 750px; margin: 0 auto; }
 
-        /* PROBLEM SECTION */
         .problem { background: var(--card-bg); text-align: center; }
         .problem h2 { font-size: 36px; color: var(--primary-glow); }
         .problem-box { margin-top: 20px; font-size: 18px; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-        /* SERVICES GRID */
         .services { text-align: center; }
         .services h2 { font-size: 36px; margin-bottom: 50px; }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -65,7 +75,6 @@
         .card:hover::before { transform: scaleX(1); }
         .card h3 { margin-bottom: 15px; color: var(--primary-glow); font-size: 22px; }
 
-        /* SOCIAL PROOF & CTA */
         .social-proof { background: var(--card-bg); text-align: center; border-bottom: 1px solid #1e293b; border-top: 1px solid #1e293b; }
         .case-study { margin-top: 20px; font-size: 22px; font-weight: 600; color: white; }
         .case-study span { color: var(--primary-glow); }
@@ -73,7 +82,6 @@
         .cta { text-align: center; padding: 100px 10%; background: radial-gradient(circle at bottom center, #112240 0%, #0A192F 100%); }
         .cta h2 { font-size: 42px; margin-bottom: 20px; }
 
-        /* FOOTER */
         footer { text-align: center; padding: 40px 10%; background: #050d1a; color: #64748b; font-size: 15px; border-top: 1px solid #1e293b; }
         .footer-link { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
         .footer-link:hover { color: white; }
@@ -105,8 +113,13 @@
     <h1>Stop Losing Leads to Your Competitors.</h1>
     <p>We deploy Autonomous AI Agents that respond to your Real Estate leads in 5 seconds, 24/7. Turn "browsers" into "booked tours" while you sleep.</p>
     <div class="btn-group">
-        <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn btn-primary">Start My Free Trial</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPm6dRvarTuJpwGx6-ETJ8WpS0kQ62Zx7UV7ftr-x3WCtvw/viewform?usp=publish-editor" class="btn btn-outline" target="_blank">Get Free AI Audit</a>
+        <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" 
+           onclick="return gtag_report_conversion('https://www.gohighlevel.com/?fp_ref=nilesh56');" 
+           class="btn btn-primary">Start My Free Trial</a>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPm6dRvarTuJpwGx6-ETJ8WpS0kQ62Zx7UV7ftr-x3WCtvw/viewform?usp=publish-editor" 
+           onclick="return gtag_report_conversion('https://docs.google.com/forms/d/e/1FAIpQLSeKPm6dRvarTuJpwGx6-ETJ8WpS0kQ62Zx7UV7ftr-x3WCtvw/viewform?usp=publish-editor');" 
+           class="btn btn-outline" target="_blank">Get Free AI Audit</a>
     </div>
 </section>
 
@@ -145,7 +158,10 @@
 <section class="cta">
     <h2>Ready to Automate Your Growth?</h2>
     <p style="margin-bottom: 30px;">Join our Partner Program today. Get a 14-Day Free Trial of the Agentic Command Center + Free Setup from our team.</p>
-    <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" class="btn btn-primary">Start My Free Trial Now</a>
+    
+    <a href="https://www.gohighlevel.com/?fp_ref=nilesh56" 
+       onclick="return gtag_report_conversion('https://www.gohighlevel.com/?fp_ref=nilesh56');" 
+       class="btn btn-primary">Start My Free Trial Now</a>
 </section>
 
 <footer>
